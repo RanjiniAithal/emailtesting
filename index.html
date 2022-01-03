@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   hiii
+
+    <script>
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Access-Control-Allow-Origin", "*");
+
+var raw = JSON.stringify({
+  "subject": "testing",
+  "body": "hey there!"
+});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow',
+  
+};
+
+fetch("https://4ja7ozdgg5.execute-api.ap-south-1.amazonaws.com/production/mail/exelon", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
+
+    </script>
+</body>
+</html>
