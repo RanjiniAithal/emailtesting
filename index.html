@@ -13,7 +13,7 @@
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Access-Control-Allow-Origin", "*");
- myHeaders.append("Access-Control-Request-Headers", "*")
+myHeaders.append("Access-Control-Request-Headers", "*")
 
 var raw = JSON.stringify({
   "subject": "testing",
@@ -25,8 +25,7 @@ var requestOptions = {
   headers: myHeaders,
   body: raw,
   redirect: 'follow',
-  
-  
+  mode: 'no-cors'
 };
 
 fetch("https://4ja7ozdgg5.execute-api.ap-south-1.amazonaws.com/production/mail/exelon", requestOptions)
