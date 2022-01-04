@@ -13,6 +13,7 @@
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Access-Control-Allow-Origin", "*");
+ myHeaders.append("Access-Control-Request-Headers", "*")
 
 var raw = JSON.stringify({
   "subject": "testing",
